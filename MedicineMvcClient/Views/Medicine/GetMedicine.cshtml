@@ -1,0 +1,51 @@
+﻿
+@model MedicineMvcClient.Models.ViewModel.MedicineListModel
+@{ ViewData["Title"] = "Search Medicine"; }
+
+<h1>Medicine Details</h1>
+
+<p>
+    <h4>Medicine Details</h4>
+    <h5>Here are yourmedicine details Mr/Mrs @ViewBag.Username.</h5>
+    <h6>Thanks for choosing our service.</h6>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(m => m.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Cost)
+            </td>
+            <td><a asp-action="" asp-controller="" asp-route-Name="@Model.Name"></a></td>
+
+        </tr>
+
+    </tbody>
+</table>
+<div>
+    <a href='@Url.Action("PlacingOrder", "Order")'>
+        <input type='button' value='Place order' />
+    </a>
+</div>
